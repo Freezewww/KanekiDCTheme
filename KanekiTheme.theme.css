@@ -1,1 +1,132 @@
+/**
+ * @name KanekiTheme
+ * @author Freeze
+ * @version 1.0
+ * @description A dark red Kaneki theme customized by Freeze.
+ * @website https://guns.lol/aqua.freeze
+ */
 
+
+/* Remplace ce lien après avoir mis core.css sur GitHub */
+@import url('https://raw.githubusercontent.com/TON-PSEUDO/TON-REPO/main/core.css');
+
+
+:root {
+    --background: url('https://i.pinimg.com/736x/ad/07/50/ad07500244fb907273025fa47aa51403.jpg');
+    --activetext-colour: white;
+
+    --primary1-colour: #ff0000;
+    --primary2-colour: rgba(255,0,0,0.5);
+    --primary3-colour: rgba(100,0,0,0.6);
+    --primary4-colour: rgba(100,0,0,0.4);
+
+    --secondary1-colour: rgba(20,20,20,0.5);
+    --secondary2-colour: rgba(15,15,15,0.7);
+    --secondary3-colour: rgba(0,0,0,0.85);
+    --secondary4-colour: rgba(0,0,0,0.5);
+}
+
+
+/* ================================
+   KANEKI CUSTOM EFFECTS
+================================ */
+
+
+/* Background flou */
+#app-mount {
+    background: transparent !important;
+}
+
+#app-mount::before {
+    content:"";
+    position:fixed;
+    top:-30px;
+    left:-30px;
+    right:-30px;
+    bottom:-30px;
+
+    background-image:var(--background);
+    background-position:center;
+    background-size:cover;
+
+    filter:blur(4px);
+
+    z-index:-1;
+}
+
+
+/* Barre du haut */
+#app-mount .title_c38106::before {
+    content:"Kaneki DC Theme v1 By Freezeww";
+    color:rgba(255,255,255,0.5);
+    font-weight:500;
+    margin-right:10px;
+}
+
+
+/* Messages transparents */
+#app-mount .message__5126c.cozyMessage__5126c .container_b7e1cb,
+#app-mount .message__5126c.cozyMessage__5126c .contents_c19a55,
+#app-mount .message__5126c.compact_c19a55 .contents_c19a55,
+#app-mount .message__5126c.compact_c19a55 .container_b7e1cb {
+    background-color:transparent !important;
+}
+
+
+/* Pulse rouge vocal */
+@keyframes kaneki-speaking {
+
+    0% {
+        box-shadow:0 0 5px red;
+    }
+
+    50% {
+        box-shadow:0 0 20px red;
+    }
+
+    100% {
+        box-shadow:0 0 5px red;
+    }
+
+}
+
+
+#app-mount .voiceUser__07f91[data-speaking="true"] .userAvatar__55bab {
+
+    animation:kaneki-speaking 1.2s infinite;
+}
+
+
+/* Scrollbar rouge */
+
+#app-mount ::-webkit-scrollbar-thumb {
+
+    background:#8b0000 !important;
+    border-radius:10px;
+
+}
+
+
+#app-mount ::-webkit-scrollbar-thumb:hover {
+
+    background:red !important;
+
+}
+
+
+/* Boutons glow rouge */
+
+button:hover {
+
+    box-shadow:0 0 10px red;
+
+}
+
+
+/* Séparateurs channels */
+
+#app-mount .containerDefault__29444 {
+
+    border-bottom:1px solid rgba(255,0,0,0.5);
+
+}
